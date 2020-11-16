@@ -1,4 +1,8 @@
+// Select html element
 var elPokemonList = $_('.js-pokemon-list');
+
+// Empty the element
+elPokemonList.innerHTML = '';
 
 
 /* =======================================================
