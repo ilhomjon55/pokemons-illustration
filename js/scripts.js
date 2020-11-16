@@ -1,9 +1,9 @@
 var elPokemonList = document.querySelector('.js-pokemon-list');
 
 
-/* ============================
+/* =======================================================
 First Homaki version
-============================ */
+======================================================= */
 
 /* for (var i = 0; i < pokemons.length; i++) {
 
@@ -29,10 +29,45 @@ First Homaki version
 } */
 
 
-/* ========================================
+/* =========================================================
 Second ForEach advanced, functional version
-=========================================== */
+========================================================= */
 
+// Special function to create element
+var createPokemonlEl = function (tag, className) {
+  var elNew = document.createElement(tag);
+  elNew.setAttribute('class', className);
+
+  return elNew;
+}
+
+// ForEach Loop to show pokemons
+pokemons.forEach(function (pokemon) {
+
+  // Create li
+  var elNewLi = createPokemonlEl('li', 'col-12 col-sm-4 border d-flex flex-column align-items-center list-group-item list-group-item-action p-2');
+
+  // Create Img
+  var elNewImg = createPokemonlEl('img');
+  elNewImg.setAttribute('src', pokemon.img);
+  elNewImg.setAttribute('width', 150);
+  elNewImg.setAttribute('height', 150);
+
+  // Create p for name
+  var elNewPName = createPokemonlEl('p', 'h5 font-weight-bold');
+  elNewPName.textContent = pokemon.name;
+
+  // Create p for type
+  var elNewPType = createPokemonlEl('p');
+  elNewPType.textContent = pokemon.type.join(', ');;
+
+  // Append all
+  elPokemonList.appendChild(elNewLi);
+  elNewLi.appendChild(elNewImg);
+  elNewLi.appendChild(elNewPName);
+  elNewLi.appendChild(elNewPType);
+
+})
 
 
 
