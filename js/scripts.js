@@ -47,12 +47,11 @@ pokemons.forEach(function (pokemon) {
   elNewImg.setAttribute('height', 150);
 
   // Create p for name
-  var elNewPName = createPokemonlEl('p', 'h5 font-weight-bold');
-  elNewPName.textContent = pokemon.name;
+  var elNewPName = createPokemonlEl('p', 'h5 font-weight-bold', pokemon.name);
 
   // Create p for type
-  var elNewPType = createPokemonlEl('p');
-  elNewPType.textContent = pokemon.type.join(', ');
+  var elNewPType = createPokemonlEl('p', '', pokemon.type.join(', '));
+
 
   // Append all
   elPokemonList.appendChild(elNewLi);
