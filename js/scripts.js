@@ -1,4 +1,4 @@
-var elPokemonList = document.querySelector('.js-pokemon-list');
+var elPokemonList = $_('.js-pokemon-list');
 
 
 /* =======================================================
@@ -33,13 +33,6 @@ First Homaki version
 Second ForEach advanced, functional version
 ========================================================= */
 
-// Special function to create element
-var createPokemonlEl = function (tag, className) {
-  var elNew = document.createElement(tag);
-  elNew.setAttribute('class', className);
-
-  return elNew;
-}
 
 // ForEach Loop to show pokemons
 pokemons.forEach(function (pokemon) {
@@ -59,7 +52,7 @@ pokemons.forEach(function (pokemon) {
 
   // Create p for type
   var elNewPType = createPokemonlEl('p');
-  elNewPType.textContent = pokemon.type.join(', ');;
+  elNewPType.textContent = pokemon.type.join(', ');
 
   // Append all
   elPokemonList.appendChild(elNewLi);
@@ -67,31 +60,4 @@ pokemons.forEach(function (pokemon) {
   elNewLi.appendChild(elNewPName);
   elNewLi.appendChild(elNewPType);
 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{
-  /* <li class="col-12 col-sm-4 d-flex flex-column align-items-center p-2">
-  <img src="http://www.serebii.net/pokemongo/pokemon/001.png" alt="Pokemon picture" width="150" height="150">
-  <p>Bulbasaur</p>
-  <p>Grass, Poison</p>
-  </li> */
-}
+});
